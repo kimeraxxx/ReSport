@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar >
+        <ion-buttons slot="start">
+            <ion-menu-button menu="main" color="tertiary"></ion-menu-button>
+           </ion-buttons>
+           <ion-buttons slot="end">
+            <ion-button [routerLink]="['/perfil']">
+                <ion-icon name="cog"></ion-icon>
+              </ion-button>
+           </ion-buttons>
+        Pistas
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let pista of pistas" [routerLink]="['/pistas', pista.uid]" >
+          <ion-avatar slot="start">
+            <ion-img [src]="pista.foto"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            {{pista.nombre}}
+          </ion-label>
+        </ion-item>
+        
+      </ion-list>
+</ion-content>

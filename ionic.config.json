@@ -1,5 +1,7 @@
 {
   "name": "ReSport",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

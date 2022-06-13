@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label >
+      
+      <ion-input [(ngModel)]="usuario.nombre" type="text" placeholder="Nombre"></ion-input>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      
+      <ion-input [(ngModel)]="usuario.apellido" type="text" placeholder="Apellido"></ion-input>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      
+      <ion-input [(ngModel)]="usuario.ciudad" type="text" placeholder="Ciudad"><ion-icon name="home"></ion-icon></ion-input>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      
+      <ion-input [(ngModel)]="usuario.telefono" type="number" placeholder="Telefono"><ion-icon name="call"></ion-icon></ion-input>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      
+      <ion-input [(ngModel)]="usuario.email" type="text" placeholder="Email"><ion-icon name="mail"></ion-icon></ion-input>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      
+      <ion-input [(ngModel)]="usuario.contrasena" type="text" placeholder="Contraseña"><ion-icon name="diamond"></ion-icon></ion-input>
+    </ion-label>
+  </ion-item>
+
+  <div>
+    <ion-button (click)="registrarse()" expand="block"  shape="round" color="medium" [routerLink]="['/home']">
+      Registrarse
+    </ion-button>
+  </div>
+  
+</ion-content>

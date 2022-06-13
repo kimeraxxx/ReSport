@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title >Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [formGroup] = "formularioLogin">
+ 
+  <ion-item lines="full" >
+    <ion-label >
+      <ion-input formControlName="email" type="text" placeholder="Email" required><ion-icon name="mail"></ion-icon></ion-input>
+      <span *ngIf="(this.formularioLogin.get('email')?.errors?.['required']) && avisoError === true " >Introduce un email</span>
+      <span *ngIf="(this.formularioLogin.get('email')?.errors?.['email']) && avisoError === true " >Email no valido</span>
+      <span *ngIf="(this.formularioLogin.get('email')?.errors?.['maxLength']) && avisoError === true ">Máximo 50 carácteres</span>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      <ion-input formControlName="password" type="password" placeholder="Contraseña" required><ion-icon name="diamond"></ion-icon></ion-input>
+      <span *ngIf="(this.formularioLogin.get('password')?.errors?.['required']) && avisoError === true " >Introduce una contraseña</span>
+      <span *ngIf="(this.formularioLogin.get('password')?.errors?.['minLength']) && avisoError === true ">Minimo 6 carácteres</span>
+    </ion-label>
+  </ion-item>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-button type="submit" (click)="iniciarSesion()" expand="block" color="medium" shape="round" [routerLink]="['/home']">
+        Iniciar sesión
+      </ion-button>
+      
+    </ion-col>
+    <ion-col size="12">
+      <ion-button type="submit" expand="block" color="tertiary" [routerLink]="['/registro']" shape="round">
+        Registrarse
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

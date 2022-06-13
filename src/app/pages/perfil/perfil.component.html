@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label >
+      Nombre: {{usuario.nombre}}
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      Apellidos: {{usuario.apellido}}
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      
+      <ion-input [(ngModel)]="usuario.ciudad" type="text" placeholder="Ciudad"><ion-icon name="home"></ion-icon></ion-input>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      
+      <ion-input [(ngModel)]="usuario.telefono" type="number" placeholder="Telefono"><ion-icon name="call"></ion-icon></ion-input>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label >
+      <ion-icon name="mail"></ion-icon>
+      {{usuario.email}}
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <ion-icon name="diamond"></ion-icon>
+      {{usuario.contrasena}}
+    </ion-label>
+  </ion-item>
+  <div>
+    <ion-button (click)="actualizarPerfil()" expand="block"  shape="round"  color="medium">
+      Guardar Cambios
+    </ion-button>
+  </div>
+  <div>
+    <ion-button (click)="cerrarSesion()" expand="block"  shape="round"   color="tertiary" [routerLink]="['/login']">
+      Cerrar Sesión
+    </ion-button>
+  </div>
